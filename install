@@ -1,0 +1,41 @@
+neovim
+slack
+htop
+curl
+chromium-browser
+mingw-w64
+virtualbox
+tig
+nmap
+tmux
+screen
+cmake
+hexedit
+p7zip-full
+unrar
+tcpdump
+i3
+i3status
+suckless-tools
+i3lock
+xbacklight 
+feh
+rofi
+docker.io
+fluxgui
+gnupg
+keepass2
+
+
+
+#ohmyzsh
+zsh
+git-core
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+

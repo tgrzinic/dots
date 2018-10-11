@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/tgrzinic/.oh-my-zsh
+export ZSH=/home/tgrzinic/.oh-my-zsh
 
 
 # ========== FUNCTIONS ========== #
@@ -75,7 +75,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(battery docker osx git python history-substring-search ssh-agent)
+plugins=(colored-man-pages zsh-autosuggestions zsh-syntax-highlighting battery docker osx git python history-substring-search ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
