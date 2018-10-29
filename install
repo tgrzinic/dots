@@ -25,7 +25,11 @@ docker.io
 fluxgui
 gnupg
 keepass2
-
+bmon
+iftop
+tcptrack
+iotop
+nmon
 
 
 #ohmyzsh
