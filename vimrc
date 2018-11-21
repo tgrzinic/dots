@@ -1,24 +1,24 @@
 "Ova konfa je napravljena 14.12.2014 i relativno je ok
-" ==========================================================
+
 " Vundle
-" ==========================================================
 set nocompatible
 filetype off
  
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+"set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#rc()
+call vundle#begin()            " required
 
-"windows
+Plugin 'VundleVim/Vundle.vim'  " required
+Plugin 'gmarik/vundle'
+
+"windows ??
 "set rtp+=~/vimfiles/bundle/Vundle.vim/
-"call vundle#begin('~/vimfiles/')
- 
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" call vundle#begin('~/vimfiles/')
  
 " Colorscheme
 Bundle 'junegunn/seoul256.vim'      
 Bundle 'tomasr/molokai'
-
 
 "---- Code nav ----
 Plugin 'scrooloose/nerdtree'                " Project and file navigation
@@ -32,18 +32,18 @@ Plugin 'vim-airline/vim-airline-themes'     " Themes for airline
 
 "Python
 "Bundle 'davidhalter/jedi-vim'
-"  Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
+Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
 Bundle 'klen/python-mode'
 Bundle 'scrooloose/syntastic'
 
 "GIT
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 
 "Latex
 "Bundle 'jcf/vim-latex'
 "Bundle 'xuhdev/vim-latex-live-preview'
 
-"call vundle#end()        
+call vundle#end()        
 
 " ==========================================================
 " Basic Settings
@@ -242,6 +242,9 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
 
-"if has('mouse')
-"  set mouse=a
-"endif
+if has('mouse')
+  set mouse=a
+endif
+
+call vundle#end()               " required
+filetype plugin indent on       " required
