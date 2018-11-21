@@ -1,5 +1,0 @@
-
-    [submodule "addy-dclxvi/i3-starterpack"]
-	path = i3-starterpack
-	url = https://github.com/addy-dclxvi/i3-starterpack
-	branch = master
