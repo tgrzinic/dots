@@ -37,8 +37,11 @@ bindkey ^[[C next
 screen -t shell
 select shell
 
+escape ^Xx #Master key CTRL+A -> CTRL+X
+
 
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][cpu %1`][mem %2`][%{B} %m-%d %{W}%c %{g}]'
+hardstatus string "%{= KW} %H  %{= Kw}|%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw %=%C%a %d-%M-%Y"
+
 
 
