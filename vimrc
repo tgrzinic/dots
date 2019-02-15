@@ -3,14 +3,14 @@
 " Vundle
 set nocompatible
 filetype off
- 
+"filetype plugin indent on       " required
+
 "set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#rc()
-call vundle#begin()            " required
 
-Plugin 'VundleVim/Vundle.vim'  " required
-Plugin 'gmarik/vundle'
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
 
 "windows ??
 "set rtp+=~/vimfiles/bundle/Vundle.vim/
@@ -31,10 +31,9 @@ Plugin 'vim-airline/vim-airline-themes'     " Themes for airline
 "Plugin 'Lokaltog/powerline'                 " Powerline fonts plugin
 
 "Python
-"Bundle 'davidhalter/jedi-vim'
-Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 Bundle 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
 
 "GIT
 Bundle 'tpope/vim-fugitive'
@@ -51,6 +50,8 @@ call vundle#end()
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
 filetype plugin indent on     " enable loading indent file for filetype
+
+let python_highlight_all=1
 
 "colorscheme seoul256 config
 let g:seoul256_background=236
@@ -154,17 +155,18 @@ let g:airline#extensions#tabline#formatter='unique_tail'
 "=====================================================
 
 " python executables for different plugins
+
 let g:pymode_python='python'
 let g:syntastic_python_python_exec='python'
 
 " rope
-let g:pymode_rope=0
-let g:pymode_rope_completion=0
-let g:pymode_rope_complete_on_dot=0
-let g:pymode_rope_auto_project=0
-let g:pymode_rope_enable_autoimport=0
-let g:pymode_rope_autoimport_generate=0
-let g:pymode_rope_guess_project=0
+"let g:pymode_rope=0
+"let g:pymode_rope_completion=0
+"let g:pymode_rope_complete_on_dot=0
+"let g:pymode_rope_auto_project=0
+"let g:pymode_rope_enable_autoimport=0
+"let g:pymode_rope_autoimport_generate=0
+"let g:pymode_rope_guess_project=0
 
 " documentation
 let g:pymode_doc=0
@@ -177,47 +179,47 @@ let g:pymode_lint=0
 let g:pymode_virtualenv=1
 
 " breakpoints
-let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key='<leader>b'
+"let g:pymode_breakpoint=1
+"let g:pymode_breakpoint_key='<leader>b'
 
 " syntax highlight
-let g:pymode_syntax=1
-let g:pymode_syntax_slow_sync=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_print_as_function=g:pymode_syntax_all
-let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
-let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_self=g:pymode_syntax_all
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_formatting=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_format=g:pymode_syntax_all
-let g:pymode_syntax_string_templates=g:pymode_syntax_all
-let g:pymode_syntax_doctests=g:pymode_syntax_all
-let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
-let g:pymode_syntax_builtin_types=g:pymode_syntax_all
-let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
-let g:pymode_syntax_docstrings=g:pymode_syntax_all
+"let g:pymode_syntax=1
+"let g:pymode_syntax_slow_sync=1
+"let g:pymode_syntax_all=1
+"let g:pymode_syntax_print_as_function=g:pymode_syntax_all
+"let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
+"let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
+"let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
+"let g:pymode_syntax_highlight_self=g:pymode_syntax_all
+"let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+"let g:pymode_syntax_string_formatting=g:pymode_syntax_all
+"let g:pymode_syntax_space_errors=g:pymode_syntax_all
+"let g:pymode_syntax_string_format=g:pymode_syntax_all
+"let g:pymode_syntax_string_templates=g:pymode_syntax_all
+"let g:pymode_syntax_doctests=g:pymode_syntax_all
+"let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
+"let g:pymode_syntax_builtin_types=g:pymode_syntax_all
+"let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
+"let g:pymode_syntax_docstrings=g:pymode_syntax_all
 
 " highlight 'long' lines (>= 80 symbols) in python files
-augroup vimrc_autocmds
-    autocmd!
-    autocmd FileType python,rst,c,cpp highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType python,rst,c,cpp match Excess /\%81v.*/
-    autocmd FileType python,rst,c,cpp set nowrap
-    autocmd FileType python,rst,c,cpp set colorcolumn=80
-augroup END
-
+"augroup vimrc_autocmds
+"    autocmd!
+"    autocmd FileType python,rst,c,cpp highlight Excess ctermbg=DarkGrey guibg=Black
+"    autocmd FileType python,rst,c,cpp match Excess /\%81v.*/
+"    autocmd FileType python,rst,c,cpp set nowrap
+"    autocmd FileType python,rst,c,cpp set colorcolumn=80
+"augroup END
+"
 " code folding
-let g:pymode_folding=0
+"let g:pymode_folding=0
 
 " pep8 indents
-let g:pymode_indent=1
+"let g:pymode_indent=1
 
 " code running
-let g:pymode_run=1
-let g:pymode_run_bind='<F5>'
+"let g:pymode_run=1
+"let g:pymode_run_bind='<F5>'
 
 
 " old pymode config
@@ -233,9 +235,8 @@ let g:pymode_run_bind='<F5>'
 "let g:pymode_lint_unmodified = 0
 "let g:pymode_rope=0 "Iskljucimo rope, tako da koristimo jedi-vim
 
-autocmd FileType python setlocal completeopt-=preview "iskljucuje dosadni docstring kada pisemo naredbu
+"autocmd FileType python setlocal completeopt-=preview "iskljucuje dosadni docstring kada pisemo naredbu
 "let g:jedi#documentation_command = "K"
-
 
 "precice za mijenjanje buffera
 map gn :bn<cr>
@@ -243,8 +244,7 @@ map gp :bp<cr>
 map gd :bd<cr>
 
 if has('mouse')
-  set mouse=a
+  set mouse=v
 endif
 
 call vundle#end()               " required
-filetype plugin indent on       " required
