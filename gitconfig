@@ -1,0 +1,16 @@
+[user]
+	name = Toni Grzinic
+	email = toni.grzinic@gmail.com
+	username = tgrzinic
+
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+[merge]
+	tool = vimdiff
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
