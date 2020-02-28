@@ -1,4 +1,4 @@
-# set modifier
+# set modifer
 set $super Mod4
 set $alt Mod1
 
@@ -9,12 +9,11 @@ font pango: Noto Sans 12
 floating_modifier $super
 
 #autostart
-#exec --no-startup-id hsetroot -center ~/.wallpaper.jpg
 exec --no-startup-id feh --bg-fill ~/.wallpaper.jpg --bg-fill ~/.wallpaper
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 #exec "setxkbmap -layout us,hr -variant , -option 'grp:alt_space_toggle'"
-bindsym $super+k exec i3-keyboard-layout cycle us hr #change keyboard layout
+bindsym $super+k exec i3-keyboard-layout cycle us hr
 
 # start a terminal
 #bindsym $super+Return exec i3-sensible-terminal
@@ -27,7 +26,7 @@ bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show dru
 # common apps keybinds
 bindsym Print exec scrot 'Screenshot_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
 bindsym $super+l exec i3lock #-i ~/.wallpaper.png
-bindsym $super+Shift+w exec chromium-browser
+#bindsym $super+Shift+w exec chromium-browser
 #bindsym $super+Shift+f exec thunar;workspace 3;focus
 
 #change volume
@@ -102,9 +101,6 @@ bindsym $super+Shift+9 move container to workspace 9
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $super+Shift+r restart
-
 # exit i3
 bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
 
@@ -132,20 +128,21 @@ bar {
         urgent_workspace	#2f343f	#ebcb8b	#2f343f
     }
         status_command i3status | i3-keyboard-layout i3status
+        #status_command i3status
 }
 
-# window rules, you can find the window class using xprop
+## window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 4
-assign [class=URxvt] 1
-assign [class=chromium-browser|Transmission-gtk] 2
-assign [class=Thunar|File-roller] 3
-assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
-assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
-assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
-for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
-for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
-for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
-
+#assign [class=URxvt] 1
+#assign [class=chromium-browser|Transmission-gtk] 2
+#assign [class=Thunar|File-roller] 3
+#assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
+#assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
+#assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
+#for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
+#for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
+#for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
+#
 # colour of border, background, text, indicator, and child_border
 client.focused			#bf616a #2f343f #d8dee8 #bf616a #d8dee8
 client.focused_inactive	#2f343f #2f343f #d8dee8 #2f343f #2f343f
@@ -153,3 +150,6 @@ client.unfocused		#2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent			#2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder		#2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background		#2f343f
+
+exec --no-startup-id xss-lock -l ./i3-lock-suspend.sh
+

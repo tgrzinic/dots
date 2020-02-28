@@ -1,0 +1,19 @@
+#!/bin/sh
+
+for i in `xrandr | grep "disconnected" | cut -f1 -d\ `;
+do
+  xrandr --output $i --off
+done
+
+xrandr --output eDP-1 --primary --auto
+prev_screen="eDP-1"
+
+for i in `xrandr | grep " connected" | grep -v "eDP-1" | cut -f1 -d\ | sort -r`;
+do
+    xrandr --output $i --right-of $prev_screen --auto
+    prev_screen=$i
+done
+
+pulseaudio --kill
+pulseaudio --start
+
