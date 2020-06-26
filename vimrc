@@ -32,7 +32,7 @@ Plugin 'vim-airline/vim-airline-themes'     " Themes for airline
 
 "Python
 Plugin 'nvie/vim-flake8'
-Bundle 'scrooloose/syntastic'               " runs files through external syntax checkers and displays any resulting errors to the user
+Plugin 'scrooloose/syntastic'               " runs files through external syntax checkers and displays any resulting errors to the user
 Plugin 'Valloric/YouCompleteMe'             " fuzzy-search code completion engine f
 
 "GIT
@@ -48,7 +48,7 @@ call vundle#end()
 " Basic Settings
 " ==========================================================
 syntax on                     " syntax highlighing
-filetype off                  " try to detect filetypes
+filetype on                   " try to detect filetypes
 "filetype plugin indent on     " enable loading indent file for filetype
 
 let python_highlight_all=1
@@ -163,11 +163,11 @@ let g:airline#extensions#tabline#formatter='unique_tail'
 "=====================================================
 " YouCompleteMe
 "=====================================================
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_collect_identifiers_from_tags_files = 1           " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1                       " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1                  " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1                          " Completion in comments
+let g:ycm_complete_in_strings = 1                           " Completion in string
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
