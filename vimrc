@@ -1,9 +1,9 @@
 "Ova konfa je napravljena 14.12.2014 i relativno je ok
 
-" Vundle
+" ==========================================================
+" Vundle - install packages
+" ==========================================================
 set nocompatible
-filetype off
-"filetype plugin indent on       " required
 
 "set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -48,12 +48,12 @@ call vundle#end()
 " Basic Settings
 " ==========================================================
 syntax on                     " syntax highlighing
-filetype on                   " try to detect filetypes
-filetype plugin indent on     " enable loading indent file for filetype
+filetype off                  " try to detect filetypes
+"filetype plugin indent on     " enable loading indent file for filetype
 
 let python_highlight_all=1
 
-"colorscheme seoul256 config
+"Colorscheme 
 let g:seoul256_background=236
 colo seoul256
 
@@ -63,13 +63,12 @@ colo seoul256
 "colo molokai
 
 set cursorline
-"set ruler
+set ruler
 
-set enc=utf-8	                            " utf-8 by default
-set nobackup 	                            " no backup files
-set nowritebackup                           " only in case you don't want a backup file while editing
-set noswapfile 	                            " no swap files
-
+set enc=utf-8	              " utf-8 by default
+set nobackup 	              " no backup files
+set nowritebackup             " only in case you don't want a backup file while editing
+set noswapfile 	              " no swap files
 
 set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
@@ -105,7 +104,14 @@ set nolazyredraw
 set showmatch           "shows matching part of bracket pairs (), [], {}
 set backspace=indent,eol,start
 
+" Buffer changes shortcuts
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
 
+if has('mouse')
+  set mouse=v
+endif
 
 "=====================================================
 " Syntastic config 
@@ -141,11 +147,6 @@ set ls=2  "Always show status line"
 nmap <F3> :NERDTreeToggle<CR>
 "map  :NERDTreeToggle "F2 shortcut za NERDTree" 
  
-"set ruler
- 
-"set hidden
- 
- 
 "=====================================================
 "" AirLine settings
 "=====================================================
@@ -158,8 +159,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#formatter='unique_tail'
-"let g:airline_powerline_fonts=1
-
 
 "=====================================================
 " YouCompleteMe
@@ -179,14 +178,4 @@ nnoremap <leader>. <C-w>z
 nnoremap <leader>cc :YcmCompleter
 nnoremap <leader>cd :YcmCompleter GoTo<CR>
 nnoremap <leader>cr :YcmCompleter GoToReferences<CR>
-
-
-" Buffer changes
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>
-
-if has('mouse')
-  set mouse=v
-endif
 
