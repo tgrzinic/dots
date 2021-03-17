@@ -29,6 +29,24 @@ bindsym $super+l exec i3lock #-i ~/.wallpaper.png
 #bindsym $super+Shift+w exec chromium-browser
 #bindsym $super+Shift+f exec thunar;workspace 3;focus
 
+
+## Set shut down, restart and locking features
+bindsym $mod1+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    ## exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 #change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
@@ -151,5 +169,5 @@ client.urgent			#2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder		#2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background		#2f343f
 
-exec --no-startup-id xss-lock -l ./i3-lock-suspend.sh
+exec --no-startup-id xss-lock -l ~/.config/i3/xss-lock-sleep-lock.sh
 

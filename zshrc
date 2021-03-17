@@ -22,7 +22,7 @@ git_branch() {
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
-SAVEHIST=e000
+SAVEHIST=1000
 #setopt prompt_subst
 #PROMPT='%F{yellow}%3~%F{green}$(git_branch) %F{red}» %F{reset}'
 #autoload -U colors && colors
@@ -75,7 +75,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting colored-man-pages zsh-autosuggestions zsh-syntax-highlighting battery docker osx git python history-substring-search ssh-agent)
+plugins=(colored-man-pages zsh-autosuggestions zsh-syntax-highlighting battery docker osx git python history-substring-search ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +83,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
@@ -112,8 +111,3 @@ export LANG="$LC_ALL"
 #export PATH="$HOME/.jenv/bin:$PATH"
 #eval "$(jenv init -)"
 
-#PATH="/Users/tgrzinic/perl5/bin${PATH:+:${PATH}}"; export PATH;
-#PERL5LIB="/Users/tgrzinic/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-#PERL_LOCAL_LIB_ROOT="/Users/tgrzinic/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-#PERL_MB_OPT="--install_base \"/Users/tgrzinic/perl5\""; export PERL_MB_OPT;
-#PERL_MM_OPT="INSTALL_BASE=/Users/tgrzinic/perl5"; export PERL_MM_OPT;

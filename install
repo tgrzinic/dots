@@ -1,45 +1,49 @@
-neovim
-slack
-htop
-curl
-chromium-browser
-mingw-w64
-virtualbox
-tig
-nmap
-tmux
-screen
-cmake
-hexedit
-p7zip-full
-unrar
-tcpdump
-i3
-i3status
-suckless-tools
-i3lock
-xbacklight 
-feh
-rofi
-docker.io
-fluxgui
-gnupg
-keepass2
+bless 
+blueman
+bluez
 bmon
-iftop
-tcptrack
-iotop
-nmon
-
-
-#ohmyzsh
-zsh
+chromium-browser
+cmake
+curl
+docker.io
+exiftool
+exuberant-ctags
+feh
+fluxgui
+gcc
+# git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh && cd .. && rm -rf fonts
 git-core
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-
+gnupg
+hexedit
+htop
+i3
+i3lock
+i3status
+i3-wm  
+iftop
+iotop
+keepass2
+libreoffice
+mingw-w64
+neovim
+nmap
+nmon
+p7zip-full
+rofi
+rxvt-unicode  
+rxvt-unicode-256color   
+screen
+suckless-tools
+tcpdump
+tcptrack
+tig
+tmux
+unrar
+virtualbox
+vlc
+# wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+wipe
+xbacklight 
+xsel
+xss-lock
+zsh
