@@ -1,14 +1,14 @@
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-!URxvt*font:                 xft:DejaVu Sans Mono for Powerline:regular:size=14
-!URxvt*imFont:               xft:DejaVu Sans Mono for Powerline:regular:size=14 
-!URxvt*boldFont:             xft:DejaVu Sans Mono for Powerline:bold:size=14
-!URxvt*italicFont:           xft:DejaVu Sans Mono for Powerline:italic:size=14
-!URxvt*boldItalicFont:       xft:DejaVu Sans Mono for Powerline:bold:italic:size=14
+URxvt*font:                 xft:DejaVu Sans Mono for Powerline:regular:size=14:antialias=true
+URxvt*imFont:               xft:DejaVu Sans Mono for Powerline:regular:size=14:antialias=true
+URxvt*boldFont:             xft:DejaVu Sans Mono for Powerline:bold:size=14:antialias=true
+URxvt*italicFont:           xft:DejaVu Sans Mono for Powerline:italic:size=14:antialias=true
+URxvt*boldItalicFont:       xft:DejaVu Sans Mono for Powerline:bold:italic:size=14:antialias=true
 
-URxvt*font: xft:Noto Mono:pixelsize=14:antialias=true,
-            xft:Noto Sans Mono CJK JP:pixelsize=14:antialias=true
+!URxvt*font: xft:Noto Mono:pixelsize=14:antialias=true,
+!            xft:Noto Sans Mono CJK JP:pixelsize=14:antialias=true
 URxvt*letterSpace: -1
 URxvt*lineSpace: 1
 URxvt.termName:             rxvt-unicode
